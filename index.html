@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ  Điển</title>
+</head>
+<body>
+<p>English</p>
+<input id="eng" type="text" value="">
+<p>Việt Nam</p>
+<input id ="vi" type="text"value="">
+<button type="button"onclick="dich()">Dịch</button>
+<script>
+    let eng = document.getElementById('eng');
+    let vi = document.getElementById('vi');
+    let dicEng = ["the",
+        "be",
+        "and",
+        "of",
+        "a",
+        "in",
+        "to",
+        "have",
+        "it",
+        "i"];
+    let dicVi = ["các",
+        "được",
+        "và",
+        "của",
+        "một",
+        "trong",
+        "đến",
+        "có",
+        "nó",
+        "tôi"];
+    function dich() {
+
+        if (eng.value === "" && vi.value === "") {
+            alert("hãy nhập từ cần tra!");
+        }
+        for(let i=0;i<dicVi.length;i++){
+            if(eng.value==="" && vi.value===dicVi[i]){
+                eng.value = dicEng[i];
+            }
+            else if(vi.value==="" && eng.value===dicEng[i]){
+                vi.value = dicVi[i];
+            }
+        }
+    }
+</script>
+</body>
+</html>
